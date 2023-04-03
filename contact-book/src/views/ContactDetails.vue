@@ -5,13 +5,21 @@
         <div>email</div>
         <div>Phone</div>
         <div>Address</div>
-        <p>Contact id is: {{ $route.params.id }}</p>
+        <p>Contact id is: {{ id }} </p>
     </div>
 </template>
 
 <script>
-
 export default {
-   
+   props: ['id'],
+   data(){
+    return {
+        
+    }
+   }
 }
 </script>
+
+<style>
+
+</style>
