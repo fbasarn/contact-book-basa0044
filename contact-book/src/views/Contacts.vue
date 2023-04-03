@@ -15,69 +15,14 @@
 </template>
 
 <script>
+import data from "../data/data.json"
+
 export default ({
 name: 'Contact List',
 data() {
 return{
      search: '',
-     contacts: [
-     {   
-        id: 0,
-        name: 'Foley',
-        lastname: 'Anthony',
-        email: 'foleyanthony@artiq.com',
-        phone: '(834) 500-2924',
-        street: '524 Knight Court',
-        city: 'Sandborn',
-        province: 'South Carolina',
-        postal: '31200'
-
-     },
-     {  
-        id: 1, 
-        name: 'Coolen',
-        lastname: 'Avery',
-        email: 'foleyanthony@artiq.com',
-        phone: '(834) 500-2924',
-        street: '524 Knight Court',
-        city: 'Sandborn',
-        province: 'South Carolina',
-        postal: '31200'
-     },
-     {   
-        id: 2,
-        name: 'Melike',
-        lastname: 'Guzelcik',
-        email: 'foleyanthony@artiq.com',
-        phone: '(834) 500-2924',
-        street: '524 Knight Court',
-        city: 'Sandborn',
-        province: 'South Carolina',
-        postal: '31200'
-     },
-     {  
-        id: 3, 
-        name: 'Ashley',
-        lastname: 'Branson',
-         email: 'foleyanthony@artiq.com',
-         phone: '(834) 500-2924',
-         street: '524 Knight Court',
-         city: 'Sandborn',
-         province: 'South Carolina',
-         postal: '31200'
-     },
-     {  
-        id: 4, 
-        name: 'Hailey',
-        lastname: 'Sunny',
-        email: 'foleyanthony@artiq.com',
-        phone: '(834) 500-2924',
-        street: '524 Knight Court',
-        city: 'Sandborn',
-        province: 'South Carolina',
-        postal: '31200'
-     },
-     ]
+     contacts: data.contacts 
  }
 
 },
