@@ -1,5 +1,6 @@
 <template>
-  <input type="text" placeholder="Search"/>
+  <input type="text" placeholder="Search" v-model="search"/>
+  <p> searching: {{ search }}</p>
   <ul class="contact--list--container">
    <li v-for="contact in sortedContacts" :key='contact.id' class="contact--list">
            <span ref="name" @click="handleClick">
@@ -16,8 +17,10 @@ export default ({
 name: 'Contact List',
 data() {
 return{
+     search: '',
      contacts: [
-     {   name: 'Foley',
+     {   
+         name: 'Foley',
          lastname: 'Anthony',
          email: 'foleyanthony@artiq.com',
          phone: '(834) 500-2924',
@@ -69,7 +72,7 @@ return{
 },
 methods: {
  handleClick(){
-     console.log(this.$refs.name)
+     console.log(this.$data)
  },
 },
 computed: {
