@@ -44,8 +44,19 @@ return{
         province: 'South Carolina',
         postal: '31200'
      },
+     {   
+        id: 2,
+        name: 'Melike',
+        lastname: 'Guzelcik',
+        email: 'foleyanthony@artiq.com',
+        phone: '(834) 500-2924',
+        street: '524 Knight Court',
+        city: 'Sandborn',
+        province: 'South Carolina',
+        postal: '31200'
+     },
      {  
-        id: 2, 
+        id: 3, 
         name: 'Ashley',
         lastname: 'Branson',
          email: 'foleyanthony@artiq.com',
@@ -56,7 +67,7 @@ return{
          postal: '31200'
      },
      {  
-        id: 3, 
+        id: 4, 
         name: 'Hailey',
         lastname: 'Sunny',
         email: 'foleyanthony@artiq.com',
@@ -66,17 +77,6 @@ return{
         province: 'South Carolina',
         postal: '31200'
      },
-     {   
-        id: 4,
-        name: 'Melike',
-        lastname: 'Guzelcik',
-        email: 'foleyanthony@artiq.com',
-        phone: '(834) 500-2924',
-        street: '524 Knight Court',
-        city: 'Sandborn',
-        province: 'South Carolina',
-        postal: '31200'
-     }
      ]
  }
 
@@ -84,18 +84,20 @@ return{
 methods: {
  handleClick(){
      console.log(this.$data)
- },
- onChange(){
-    console.log(this.$data)
  }
 },
 computed: {
  sortedContacts(){
-     return this.contacts.sort( (a, b) => {
+    const contacts = this.contacts
+    const sorted = contacts.sort( (a, b) => {
          if (a.lastname < b.lastname){ return -1 }
          if (a.lastname > b.lastname){ return 1 }
          else{return 0}
      } )
+    const filter = sorted.filter( contact => {
+    return (contact.name + " " + contact.lastname).toLowerCase().includes(this.search)
+})
+    return filter
  }
 }
 })
