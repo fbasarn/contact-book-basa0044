@@ -1,12 +1,13 @@
 <template>
+    <router-link :to="{ name: 'Contacts'}"><button><i>Arrow</i> Contacts</button></router-link>
+    <button>Edit</button>
     <div>
         <h2>Name</h2>
         <br>
         <div>email</div>
         <div>Phone</div>
         <div>Address</div>
-        <p>Contact id is: {{ id }} </p>
-    </div>
+    </div> 
 </template>
 
 <script>
@@ -20,6 +21,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

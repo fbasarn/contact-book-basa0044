@@ -1,11 +1,11 @@
 <template>
+<router-link :to="{ name: 'New'}"><button><i>Plus Icon</i> Add New</button></router-link>
 <h1>Contact Book</h1>
-<input type="text" placeholder="Search" v-model="search" @change="onChange"/>
-  <p> searching: {{ search }}</p>
+<input type="text" placeholder="Search" v-model="search"/>
   <ul class="contact--list--container">
    <li v-for="contact in sortedContacts" :key='contact.id' class="contact--list">
            <router-link :to="{ name: 'ContactDetails', params: { id: contact.id }}">
-           <span ref="name" @click="handleClick">
+           <span ref="name">
              {{ contact.name }}
              {{ contact.lastname }}
            </span>  
@@ -82,9 +82,6 @@ return{
 
 },
 methods: {
- handleClick(){
-     console.log(this.$data)
- }
 },
 computed: {
  sortedContacts(){
@@ -103,7 +100,7 @@ computed: {
 })
 </script>
 
-<style>
+<style scoped>
 .contact--list{
   list-style-type: none;
   text-align: left;
