@@ -1,6 +1,6 @@
 <template>
     <router-link :to="{ name: 'Contacts'}"><button><i>Arrow</i> Contacts</button></router-link>
-    <button>Edit</button>
+    <router-link :to="{name: 'Edit'}"><button>Edit</button></router-link>
     <div>
         <h2>{{ contact.name }} {{ contact.lastname }}</h2>
         <div>{{contact.email}}</div><br>

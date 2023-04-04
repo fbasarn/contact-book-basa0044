@@ -2,6 +2,8 @@ import {createRouter, createWebHistory} from 'vue-router'
 import Contacts from '../views/Contacts.vue'
 import ContactDetails from '../views/ContactDetails.vue'
 import New from '../views/New.vue'
+import Edit from '../views/Edit.vue'
+
 
 
 const routes = [
@@ -20,6 +22,11 @@ const routes = [
         path: '/New',
         name: 'New',
         component: New
+    },
+    {
+        path: '/:id/Edit',
+        name: 'Edit',
+        component: Edit,
     }
 ]
 
