@@ -11,12 +11,13 @@
 </template>
 
 <script>
-import dataSet from "../data/data.json"
 
 export default {
    props: ['id'],
    data(){
     return {
+        contacts: [],
+        thisContact: [],
     }
    },
    computed: {
@@ -24,10 +25,19 @@ export default {
         return parseInt(this.$route.params.id)
     },
     contact() {
-        return dataSet.contacts.find(
+        console.log(this.contacts)
+        const contact = this.contacts.find(
         (contact) => contact.id === this.routeId
         )
+        this.thisContact = contact
+        console.log(contact)
+        console.log(this.thisContact)
+        return contact
     }
+   },
+   created: function(){
+    const contacts = JSON.parse(localStorage.getItem("contacts"))
+    this.contacts = contacts
    }
 }
 </script>

@@ -35,7 +35,9 @@
                 v-model="phone"
                 >
                 <br>
+                <router-link :to="{ name: 'ContactDetails', params: { id: this.contacts.length - 1 }}">
                 <button @click="newContact" type="submit">Add Contact</button>
+                </router-link>
             </form>
         </div>
     </div>
@@ -50,10 +52,10 @@ export default{
     data: function(){
     return {
         contacts: [],
-        fname: "",
-        lname: "",
-        email: "",
-        phone: "",
+        "fname": "",
+        "lname": "",
+        "email": "",
+        "phone": "",
         }
    },
    methods: {
