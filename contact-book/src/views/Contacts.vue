@@ -32,7 +32,7 @@ mounted() {
   const array = contactslist
   console.log(array)
   if (contactslist){  
-         const sorted = array.sort( (a, b) => {
+         const sorted = array.contacts.sort( (a, b) => {
          if (a.lastname < b.lastname){ return -1 }
          if (a.lastname > b.lastname){ return 1 }
          else{return 0}
@@ -52,7 +52,7 @@ return filter
  }
 },
 created: function(){ 
-
+  return localStorage.setItem("contacts", JSON.stringify(data))
 }
 })
 </script>
