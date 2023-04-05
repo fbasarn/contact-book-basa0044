@@ -45,9 +45,6 @@
 
 <script>
 
-import { isProxy, toRaw } from 'vue';
-
-
 export default{
     data: function(){
     return {

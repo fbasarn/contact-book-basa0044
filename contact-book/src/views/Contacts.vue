@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import data from "../data/data.json"
+import addContact from "../views/New.vue"
 
 
 export default ({
@@ -23,16 +23,72 @@ name: 'Contact List',
 data() {
 return{
      search: '',
-     contacts: [ ],
+     contacts: [ 
+      {   
+           "id": 0,
+           "name": "Foley",
+           "lastname": "Anthony",
+           "email": "foleyanthony@artiq.com",
+           "phone": "(834) 500-2924",
+           "street": "524 Knight Court",
+           "city": "Sandborn",
+           "province": "South Carolina",
+           "postal": 31200
+   
+        },
+        {  
+            "id": 1,
+            "name": "Coolen",
+            "lastname": "Smith",
+            "email": "csm@artiq.com",
+            "phone": "(834) 500-2924",
+            "street": "524 Knight Court",
+            "city": "Sandborn",
+            "province": "South Carolina",
+            "postal": 31200
+        },
+        {   
+            "id": 2,
+            "name": "Melike",
+            "lastname": "Guzelcik",
+            "email": "foleyanthony@artiq.com",
+            "phone": "(834) 500-2924",
+            "street": "524 Knight Court",
+            "city": "Sandborn",
+            "province": "South Carolina",
+            "postal": 31200
+        },
+        {  
+            "id": 3,
+            "name": "Nesibe",
+            "lastname": "Eren",
+            "email": "foleyanthony@artiq.com",
+            "phone": "(834) 500-2924",
+            "street": "524 Knight Court",
+            "city": "Sandborn",
+            "province": "South Carolina",
+            "postal": 31200
+        },
+        {  
+            "id": 4,
+            "name": "Derya",
+            "lastname": "Caman",
+            "email": "foleyanthony@artiq.com",
+            "phone": "(834) 500-2924",
+            "street": "524 Knight Court",
+            "city": "Sandborn",
+            "province": "South Carolina",
+            "postal": 31200
+        }
+      ]
  }
 
 },
 mounted() {
   const contactslist = JSON.parse(localStorage.getItem("contacts"))
-  const array = contactslist
-  console.log(array)
+  console.log(contactslist)
   if (contactslist){  
-         const sorted = array.contacts.sort( (a, b) => {
+         const sorted = contactslist.sort( (a, b) => {
          if (a.lastname < b.lastname){ return -1 }
          if (a.lastname > b.lastname){ return 1 }
          else{return 0}
@@ -52,8 +108,7 @@ return filter
  }
 },
 created: function(){ 
-  return localStorage.setItem("contacts", JSON.stringify(data))
-}
+},
 })
 </script>
 

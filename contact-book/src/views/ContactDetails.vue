@@ -36,8 +36,8 @@ export default {
     }
    },
    created: function(){
-    const contacts = JSON.parse(localStorage.getItem("contacts"))
-    this.contacts = contacts
+    this.contacts = JSON.parse(localStorage.getItem("contacts"))
+    console.log(this.contacts)
    }
 }
 </script>
