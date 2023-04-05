@@ -38,7 +38,9 @@
                 <button type="submit" @click="editContact">Update Contact</button>
                 </router-link>
             </form>
+            <router-link :to="{ name: 'Contacts'}">
             <button @click="deleteContact">Delete Contact</button>
+            </router-link>
     </div>
 </template>
 
