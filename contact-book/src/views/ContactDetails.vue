@@ -25,19 +25,15 @@ export default {
         return parseInt(this.$route.params.id)
     },
     contact() {
-        console.log(this.contacts)
         const contact = this.contacts.find(
         (contact) => contact.id === this.routeId
         )
         this.thisContact = contact
-        console.log(contact)
-        console.log(this.thisContact)
         return contact
     }
    },
    created: function(){
     this.contacts = JSON.parse(localStorage.getItem("contacts"))
-    console.log(this.contacts)
    }
 }
 </script>

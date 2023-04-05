@@ -34,9 +34,11 @@
                 v-model="phone"
                 >
                 <br>
+                <router-link :to="{ name: 'ContactDetails', params: { id: parseInt(this.$route.params.id) }}">
                 <button type="submit" @click="editContact">Update Contact</button>
+                </router-link>
             </form>
-            <button>Delete Contact</button>
+            <button @click="deleteContact">Delete Contact</button>
     </div>
 </template>
 
@@ -59,8 +61,20 @@ export default{
    const contact = this.contacts.find(
         (contact) => contact.id === parseInt(this.$route.params.id)
         )
-        contact = {id:parseInt(this.$route.params.id) ,name: this.fname, lastname: this.lname, email:this.email, phone:this.phone}
-        console.log(contact)
+        contact.name = this.fname
+        contact.lastname = this.lname
+        contact.email = this.email
+        contact.phone = this.phone
+        localStorage.setItem("contacts", JSON.stringify(this.contacts) )
+   },
+   deleteContact(){
+    this.contacts.find(
+        (contact) => contact.id === parseInt(this.$route.params.id)
+        )
+    this.contacts.splice(parseInt(this.$route.params.id), 1)
+    const relist = this.contacts.map( (contact, id) => ({...contact, id}) )
+    localStorage.setItem("contacts", JSON.stringify(relist) )
+    console.log(relist)
    }
    },
    }
