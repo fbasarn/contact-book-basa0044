@@ -85,7 +85,8 @@ return{
 
 },
 mounted() {
-  const contactslist = JSON.parse(localStorage.getItem("contacts"))
+  const contactslist = JSON.parse(localStorage.getItem("contacts")) || this.contacts
+  localStorage.setItem("contacts", JSON.stringify(contactslist))
   console.log(contactslist)
   if (contactslist){  
          const sorted = contactslist.sort( (a, b) => {
