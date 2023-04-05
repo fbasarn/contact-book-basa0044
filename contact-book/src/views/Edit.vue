@@ -41,7 +41,17 @@
 </template>
 
 <script>
-
+export default{
+    data: function(){
+    return {
+        contacts: [],
+        "fname": "",
+        "lname": "",
+        "email": "",
+        "phone": "",
+        }
+   },
+   }
 </script>
 
 <style lang="scss" scoped>
