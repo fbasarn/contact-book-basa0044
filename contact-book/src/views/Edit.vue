@@ -34,7 +34,7 @@
                 v-model="phone"
                 >
                 <br>
-                <button type="submit">Update Contact</button>
+                <button type="submit" @click="editContact">Update Contact</button>
             </form>
             <button>Delete Contact</button>
     </div>
@@ -50,6 +50,18 @@ export default{
         "email": "",
         "phone": "",
         }
+   },
+   created: function(){
+    this.contacts = JSON.parse(localStorage.getItem("contacts"))
+   },
+   methods:{
+   editContact(){
+   const contact = this.contacts.find(
+        (contact) => contact.id === parseInt(this.$route.params.id)
+        )
+        contact = {id:parseInt(this.$route.params.id) ,name: this.fname, lastname: this.lname, email:this.email, phone:this.phone}
+        console.log(contact)
+   }
    },
    }
 </script>

@@ -64,9 +64,7 @@ export default{
    },
    created() {
     const contacts = JSON.parse(localStorage.getItem("contacts"))
-    const array = contacts
-    this.contacts = array
-    console.log(array)
+    this.contacts = contacts
    }
 }
 </script>

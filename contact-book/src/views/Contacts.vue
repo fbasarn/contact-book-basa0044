@@ -15,8 +15,6 @@
 </template>
 
 <script>
-import addContact from "../views/New.vue"
-
 
 export default ({
 name: 'Contact List',
