@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="header">
-            <router-link :to="{ name: 'Contacts'}"><button><i class="fa-solid fa-arrow-left"></i> Contacts</button></router-link>
+            <router-link :to="{ name: 'ContactDetails', params: { id: this.$route.params.id }}"><button><i class="fa-solid fa-arrow-left"></i>  Go Back</button></router-link>
             <h1>Edit Contact</h1>
         </div>
         <form @submit.prevent>

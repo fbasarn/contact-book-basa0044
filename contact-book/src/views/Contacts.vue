@@ -1,8 +1,8 @@
 <template>
   <div class="contactContainer">
 <div class="contactHeader">
-  <router-link :to="{ name: 'New'}"><button><i class="fa-solid fa-plus"></i> Add New</button></router-link>
   <h1>Contact Book</h1>
+  <router-link :to="{ name: 'New'}"><button class="btn btn-light"><i class="fa-solid fa-plus"></i> Add New</button></router-link>
 </div>
 <div class="search">
 <input type="text" placeholder="Search" v-model="search" class="form-control mb-3"/>
@@ -229,9 +229,18 @@ created: function(){
 .contactContainer{
   height: calc(100vh - 64px);
 }
+
+.contactHeader{
+  display: flex;
+  justify-content: space-between;
+}
 .contact--list{
   list-style-type: none;
   text-align: left;
+}
+
+.contact--list a:hover{
+color:#d3d4d5;
 }
 
 .contact--list > a{
