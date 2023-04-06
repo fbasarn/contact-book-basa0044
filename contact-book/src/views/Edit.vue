@@ -1,48 +1,79 @@
 <template>
-    <div>
-        <div class="header">
-            <router-link :to="{ name: 'ContactDetails', params: { id: this.$route.params.id }}"><button><i class="fa-solid fa-arrow-left"></i>  Go Back</button></router-link>
+    <div class="editContainer">
+        <div class="editHeader">
+            <router-link :to="{ name: 'ContactDetails', params: { id: this.$route.params.id }}"><button class="btn btn-light"><i class="fa-solid fa-arrow-left"></i></button></router-link>
             <h1>Edit Contact</h1>
         </div>
         <form @submit.prevent>
-                <input 
-                type="text" 
-                id="fname" 
-                name="fname" 
-                v-model="fname"
-                :placeholder="contact.name"
-                >
-                <br>
-                <input 
-                type="text" 
-                id="lname" 
-                name="lname" 
-                :placeholder="contact.lastname"
-                v-model="lname"
-                >
-                <br>
-                <input 
-                type="text" 
-                id="email" 
-                name="email" 
-                :placeholder="contact.email"
-                v-model="email"
-                >
-                <br>
-                <input 
-                type="text" 
-                id="phone" 
-                name="phone" 
-                :placeholder="contact.phone"
-                v-model="phone"
-                >
-                <br>
+            <div class="mb-3">
+                    <input 
+                    class="form-control" type="text" 
+                    id="fname" name="fname" 
+                    :placeholder="contact.name"
+                    v-model="fname">
+                </div>
+                <div class="mb-3">
+                    <input 
+                    class="form-control" type="text" 
+                    id="lname" name="lname" 
+                    :placeholder="contact.lastname"
+                    v-model="lname"
+                    >
+                </div>
+                <div class="mb-3">
+                    <input 
+                    class="form-control" type="email" 
+                    id="email" name="email" 
+                    :placeholder="contact.email"
+                    v-model="email"
+                    >
+                </div>
+                <div class="mb-3">
+                    <input 
+                    class="form-control" type="text" 
+                    id="phone" name="phone" 
+                    :placeholder="contact.phone"
+                    v-model="phone"
+                    >
+                </div>
+                <div class="mb-3">
+                    <input 
+                    class="form-control" type="text" 
+                    id="street" name="street" 
+                    :placeholder="contact.street"
+                    v-model="street"
+                    >
+                </div>
+                <div class="mb-3">
+                    <input 
+                    class="form-control" type="text" 
+                    id="city" name="city" 
+                    :placeholder="contact.city"
+                    v-model="city"
+                    >
+                </div>
+                <div class="mb-3">
+                    <input 
+                    class="form-control" type="text" 
+                    id="province" name="province" 
+                    :placeholder="contact.province"
+                    v-model="province"
+                    >
+                </div>
+                <div class="mb-3">
+                    <input 
+                    class="form-control" type="text" 
+                    id="postal" name="postal" 
+                    :placeholder="contact.postal"
+                    v-model="postal"
+                    >
+                </div>
                 <router-link :to="{ name: 'ContactDetails', params: { id: parseInt(this.$route.params.id) }}">
-                <button type="submit" @click="editContact">Update Contact</button>
+                <button type="submit" @click="editContact" class="btn btn-light">Update Contact</button>
                 </router-link>
             </form>
-            <router-link :to="{ name: 'Contacts'}">
-            <button @click="deleteContact">Delete Contact</button>
+            <router-link :to="{ name: 'Contacts'}" class="deleteContact">
+            <button @click="deleteContact" class="btn btn-delete">Delete Contact</button>
             </router-link>
     </div>
 </template>
@@ -56,6 +87,10 @@ export default{
         "lname": "",
         "email": "",
         "phone": "",
+        "street": "",
+        "city": "",
+        "province": "",
+        "postal": ""
         }
    },
    created: function(){
@@ -78,6 +113,10 @@ export default{
         contact.lastname = this.lname
         contact.email = this.email
         contact.phone = this.phone
+        contact.street = this.street
+        contact.city = this.city
+        contact.province = this.province
+        contact.postal = this.postal
         localStorage.setItem("contacts", JSON.stringify(this.contacts) )
    },
    deleteContact(){
@@ -93,6 +132,29 @@ export default{
    }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.editContainer{
+    width: 90vw;
+    max-width: 500px;
+}
+.editHeader{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    align-items: center;
+}
 
+.deleteContact{
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+}
+.btn-delete{
+    border: 1px solid brown;
+    text-decoration: none;
+}
+
+.btn-delete:hover{
+    background-color: brown;
+    color: white;
+}
 </style>

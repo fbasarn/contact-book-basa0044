@@ -70,7 +70,7 @@
                     >
                 </div>
                 <router-link :to="{ name: 'ContactDetails', params: { id: this.contacts.length - 1 }}">
-                <button @click="newContact" type="submit" class="btn btn-light">Add Contact</button>
+                <button @click="newContact" type="submit" >Add Contact</button>
                 </router-link>
             </form>
         </div>
