@@ -1,13 +1,19 @@
 <template>
-    <router-link :to="{ name: 'Contacts'}"><button><i class="fa-solid fa-arrow-left"></i>  Contacts</button></router-link>
-    <router-link :to="{name: 'Edit'}"><button>Edit</button></router-link>
-    <div>
-        <h2>{{ contact.name }} {{ contact.lastname }}</h2>
-        <div>{{contact.email}}</div><br>
-        <div>{{contact.phone}}</div><br>
-        <div>{{ contact.street }} {{ contact.city }}</div>
-        <div>{{ contact.province }} {{ contact.postal }}</div>
-    </div> 
+    <div class="contactDetailsContainer">
+        <div class="contactDetailsHeader mb-3">
+            <router-link :to="{ name: 'Contacts'}">
+                <button class="btn btn-light"><i class="fa-solid fa-arrow-left"></i>  Contacts</button>
+            </router-link>
+            <router-link :to="{name: 'Edit'}"><button class="btn btn-light">Edit</button></router-link>
+        </div>
+        <ul class="contactDetails list-group">
+            <li class="list-group-item contact-name">{{ contact.name }} {{ contact.lastname }}</li>
+            <li class="list-group-item">{{contact.email}}</li>
+            <li class="list-group-item">{{contact.phone}}</li>
+            <li class="list-group-item">{{ contact.street }} {{ contact.city }} <br> 
+            {{ contact.province }} {{ contact.postal }}</li>
+        </ul> 
+    </div>
 </template>
 
 <script>
@@ -39,5 +45,20 @@ export default {
 </script>
 
 <style scoped>
+.contactDetailsContainer{
+    width: 60vw;
+    max-width: 400px;
+}
+.contactDetailsHeader{
+    display: flex;
+    justify-content: space-between;
+}
 
+.contactDetails{
+
+}
+
+.contact-name{
+    font-size: 2rem;
+}
 </style>

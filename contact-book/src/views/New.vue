@@ -1,7 +1,9 @@
 <template>
-    <div>
-        <router-link :to="{ name: 'Contacts' }"><i class="fa-solid fa-arrow-left"></i></router-link>
+    <div class="newContainer">
+        <div class="newHeader mb-3">
+        <router-link :to="{ name: 'Contacts' }"><button class="btn btn-light"><i class="fa-solid fa-arrow-left"></i></button></router-link>
         <h1>New Contact</h1>
+        </div>
         <div>
             <form @submit.prevent>
                 <div class="mb-3">
@@ -68,7 +70,7 @@
                     >
                 </div>
                 <router-link :to="{ name: 'ContactDetails', params: { id: this.contacts.length - 1 }}">
-                <button @click="newContact" type="submit">Add Contact</button>
+                <button @click="newContact" type="submit" class="btn btn-light">Add Contact</button>
                 </router-link>
             </form>
         </div>
@@ -107,6 +109,15 @@ export default{
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.newContainer{
+    width: 60vw;
+    max-width: 600px;
+}
+.newHeader{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    align-items: center;
+}
 
 </style>
