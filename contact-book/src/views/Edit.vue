@@ -9,14 +9,15 @@
                 type="text" 
                 id="fname" 
                 name="fname" 
-                placeholder="First Name"
-                v-model="fname">
+                v-model="fname"
+                :placeholder="contact.name"
+                >
                 <br>
                 <input 
                 type="text" 
                 id="lname" 
                 name="lname" 
-                placeholder="Last Name"
+                :placeholder="contact.lastname"
                 v-model="lname"
                 >
                 <br>
@@ -24,7 +25,7 @@
                 type="text" 
                 id="email" 
                 name="email" 
-                placeholder="email"
+                :placeholder="contact.email"
                 v-model="email"
                 >
                 <br>
@@ -32,7 +33,7 @@
                 type="text" 
                 id="phone" 
                 name="phone" 
-                placeholder="Phone"
+                :placeholder="contact.phone"
                 v-model="phone"
                 >
                 <br>
@@ -59,6 +60,14 @@ export default{
    },
    created: function(){
     this.contacts = JSON.parse(localStorage.getItem("contacts"))
+   },
+   computed:{
+   contact(){
+    const contact = this.contacts.find(
+        (contact) => contact.id === parseInt(this.$route.params.id)
+        )
+        return contact
+    }
    },
    methods:{
    editContact(){

@@ -54,10 +54,6 @@ export default {
     justify-content: space-between;
 }
 
-.contactDetails{
-
-}
-
 .contact-name{
     font-size: 2rem;
 }
