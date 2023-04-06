@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="{ name: 'Contacts'}"><button><i>Arrow</i> Contacts</button></router-link>
+    <router-link :to="{ name: 'Contacts'}"><button><i class="fa-solid fa-arrow-left"></i>  Contacts</button></router-link>
     <router-link :to="{name: 'Edit'}"><button>Edit</button></router-link>
     <div>
         <h2>{{ contact.name }} {{ contact.lastname }}</h2>

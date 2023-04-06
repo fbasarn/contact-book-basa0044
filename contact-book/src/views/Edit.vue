@@ -1,7 +1,9 @@
 <template>
     <div>
-        <router-link :to="{ name: 'Contacts'}"><button><i>Arrow</i> Contacts</button></router-link>
-        <h1>Edit Contact</h1>
+        <div class="header">
+            <router-link :to="{ name: 'Contacts'}"><button><i class="fa-solid fa-arrow-left"></i> Contacts</button></router-link>
+            <h1>Edit Contact</h1>
+        </div>
         <form @submit.prevent>
                 <input 
                 type="text" 

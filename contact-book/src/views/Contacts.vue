@@ -1,9 +1,14 @@
 <template>
-<router-link :to="{ name: 'New'}"><button><i>Plus Icon</i> Add New</button></router-link>
-<h1>Contact Book</h1>
-<input type="text" placeholder="Search" v-model="search"/>
-  <ul class="contact--list--container" :if="!! contacts">
-   <li v-for="(contact) in sortedContacts" :key='contact.id' class="contact--list">
+  <div class="contactContainer">
+<div class="contactHeader">
+  <router-link :to="{ name: 'New'}"><button><i class="fa-solid fa-plus"></i> Add New</button></router-link>
+  <h1>Contact Book</h1>
+</div>
+<div class="search">
+<input type="text" placeholder="Search" v-model="search" class="form-control mb-3"/>
+</div>
+  <ul class="contact--list--container list-group" :if="!! contacts">
+   <li v-for="(contact) in sortedContacts" :key='contact.id' class="contact--list list-group-item">
            <router-link :to="{ name: 'ContactDetails', params: { id: contact.id }}">
            <span ref="name">
              {{ contact.name }}
@@ -12,6 +17,7 @@
         </router-link>                  
    </li>
 </ul>
+</div>
 </template>
 
 <script>
@@ -220,12 +226,26 @@ created: function(){
 </script>
 
 <style scoped>
+.contactContainer{
+  height: calc(100vh - 64px);
+}
 .contact--list{
   list-style-type: none;
   text-align: left;
 }
 
+.contact--list > a{
+  text-decoration: none;
+  color: black;
+}
+
 .contact--list--container{
   padding: 0;
+  width: 60vw;
+  max-width: 800px;
+}
+
+.search{
+  position:relative;
 }
 </style>

@@ -1,72 +1,72 @@
 <template>
     <div>
-        <router-link :to="{ name: 'Contacts' }"><i>Arrow Contacts</i></router-link>
+        <router-link :to="{ name: 'Contacts' }"><i class="fa-solid fa-arrow-left"></i></router-link>
         <h1>New Contact</h1>
         <div>
             <form @submit.prevent>
-                <input 
-                type="text" 
-                id="fname" 
-                name="fname" 
-                placeholder="First Name"
-                v-model="fname">
-                <br>
-                <input 
-                type="text" 
-                id="lname" 
-                name="lname" 
-                placeholder="Last Name"
-                v-model="lname"
-                >
-                <br>
-                <input 
-                type="text" 
-                id="email" 
-                name="email" 
-                placeholder="email"
-                v-model="email"
-                >
-                <br>
-                <input 
-                type="text" 
-                id="phone" 
-                name="phone" 
-                placeholder="Phone Number"
-                v-model="phone"
-                >
-                <br>
-                <input 
-                type="text" 
-                id="street" 
-                name="street" 
-                placeholder="Street"
-                v-model="street"
-                >
-                <br>
-                <input 
-                type="text" 
-                id="city" 
-                name="city" 
-                placeholder="City/Town"
-                v-model="city"
-                >
-                <br>
-                <input 
-                type="text" 
-                id="province" 
-                name="province" 
-                placeholder="State/Province/Region"
-                v-model="province"
-                >
-                <br>
-                <input 
-                type="text" 
-                id="postal" 
-                name="postal" 
-                placeholder="ZIP/ Postal Code"
-                v-model="postal"
-                >
-                <br>
+                <div class="mb-3">
+                    <input 
+                    class="form-control" type="text" 
+                    id="fname" name="fname" 
+                    placeholder="First Name"
+                    v-model="fname">
+                </div>
+                <div class="mb-3">
+                    <input 
+                    class="form-control" type="text" 
+                    id="lname" name="lname" 
+                    placeholder="Last Name"
+                    v-model="lname"
+                    >
+                </div>
+                <div class="mb-3">
+                    <input 
+                    class="form-control" type="email" 
+                    id="email" name="email" 
+                    placeholder="email"
+                    v-model="email"
+                    >
+                </div>
+                <div class="mb-3">
+                    <input 
+                    class="form-control" type="text" 
+                    id="phone" name="phone" 
+                    placeholder="Phone Number"
+                    v-model="phone"
+                    >
+                </div>
+                <div class="mb-3">
+                    <input 
+                    class="form-control" type="text" 
+                    id="street" name="street" 
+                    placeholder="Street"
+                    v-model="street"
+                    >
+                </div>
+                <div class="mb-3">
+                    <input 
+                    class="form-control" type="text" 
+                    id="city" name="city" 
+                    placeholder="City/Town"
+                    v-model="city"
+                    >
+                </div>
+                <div class="mb-3">
+                    <input 
+                    class="form-control" type="text" 
+                    id="province" name="province" 
+                    placeholder="State/Province/Region"
+                    v-model="province"
+                    >
+                </div>
+                <div class="mb-3">
+                    <input 
+                    class="form-control" type="text" 
+                    id="postal" name="postal" 
+                    placeholder="ZIP/ Postal Code"
+                    v-model="postal"
+                    >
+                </div>
                 <router-link :to="{ name: 'ContactDetails', params: { id: this.contacts.length - 1 }}">
                 <button @click="newContact" type="submit">Add Contact</button>
                 </router-link>
