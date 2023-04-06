@@ -31,8 +31,40 @@
                 type="text" 
                 id="phone" 
                 name="phone" 
-                placeholder="Phone"
+                placeholder="Phone Number"
                 v-model="phone"
+                >
+                <br>
+                <input 
+                type="text" 
+                id="street" 
+                name="street" 
+                placeholder="Street"
+                v-model="street"
+                >
+                <br>
+                <input 
+                type="text" 
+                id="city" 
+                name="city" 
+                placeholder="City/Town"
+                v-model="city"
+                >
+                <br>
+                <input 
+                type="text" 
+                id="province" 
+                name="province" 
+                placeholder="State/Province/Region"
+                v-model="province"
+                >
+                <br>
+                <input 
+                type="text" 
+                id="postal" 
+                name="postal" 
+                placeholder="ZIP/ Postal Code"
+                v-model="postal"
                 >
                 <br>
                 <router-link :to="{ name: 'ContactDetails', params: { id: this.contacts.length - 1 }}">
@@ -53,12 +85,17 @@ export default{
         "lname": "",
         "email": "",
         "phone": "",
+        "street": "",
+        "city": "",
+        "province": "",
+        "postal": ""
         }
    },
    methods: {
     newContact: function(){
     const id = this.contacts.length
-    this.contacts = [...this.contacts, {id:id ,name: this.fname, lastname: this.lname, email:this.email, phone:this.phone}]
+    this.contacts = [...this.contacts, {id:id ,name: this.fname, lastname: this.lname, email:this.email, 
+        phone:this.phone, street:this.street, city:this.city, province:this.province, postal:this.postal }]
     localStorage.setItem("contacts", JSON.stringify(this.contacts) )
    },
    },
