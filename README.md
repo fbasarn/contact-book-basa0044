@@ -8,7 +8,7 @@ This project is built using Vite and Vue.js, offering an interactive contact boo
 - Delete or edit existing contact details.
 - Search for specific contacts within the book.
 
-Changes made to contacts are persisted using localStorage.
+The contacts will appear sorted by their last name after they are added. Changes made to contacts are persisted using localStorage.
 
 ## Building and Running
 
