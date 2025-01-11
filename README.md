@@ -1,7 +1,23 @@
-# Vue 3 + Vite
+# Contact Book
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Project Overview
 
-## Recommended IDE Setup
+This project is built using Vite and Vue.js, offering an interactive contact book where users can:
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- Add new contacts to their contact list.
+- Delete or edit existing contact details.
+- Search for specific contacts within the book.
+
+Changes made to contacts are persisted using localStorage.
+
+## Building and Running
+
+- Open a terminal and run the command  'node -v' to check if Node.js is installed.
+- If you see a version number, navigate to the project directory.
+- Install the project dependencies using the command 'npm install'.
+- To start the server, use the command 'npm run dev'.
+- Open the local url in a browser to see the app.
+
+## Credits
+
+This project is developed by Feyza Basaran.
