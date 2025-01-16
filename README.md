@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Check the live demo of this project from [here](https://fbasarn.github.io/contact-book-basa0044/).
+Check the project live demo from [here](https://fbasarn.github.io/contact-book-basa0044/).
 
 This project is built using Vite and Vue.js, offering an interactive contact book where users can:
 
